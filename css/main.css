@@ -1,9 +1,44 @@
 .header {
-background-color: palevioletred;
+    background-color: palevioletred;
+    text-align: center;    
+    padding: 10px;
+    width: 100%;
 }
-.main {
+
+.main { /*contains app divs*/
     background-color: yellow;
+    width: 80%;
+    margin: auto;    
+    text-align: center;  
+    overflow: hidden;      
 }
+.appContainer {
+    background-color: turquoise;     
+    min-width: 10em;
+    max-width: 30%;    
+    padding: 5px;  
+    margin: 10px;    
+    float: left; 
+    
+}
+.wrap { /*creates sticky footer*/
+    min-height: calc(100vh - 89px);
+  }
 .footer {
-background-color: lightblue;
+    background-color: lightblue;
+    width: 100%;
+    text-align: center;    
+    padding: 10px;
 }
+
+/*Media Queries*/
+@media (min-width: 769px) {
+
+    /*float clearfix*/
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    
+    }
