@@ -1,2 +1,2 @@
-# CL-some-useful-apps
+# CL-tip-calculator
 Code Louisville Front End Project
