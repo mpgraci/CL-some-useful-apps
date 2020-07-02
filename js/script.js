@@ -9,21 +9,33 @@ function calcTip(bill, tip) {
     tipTotal = (Math.round(tipTotal * 100) / 100).toFixed(2);  
     total = (Math.round(total * 100) / 100).toFixed(2);
 
-    //outputs values to page
-    document.getElementById("tipTotal").innerHTML = tipTotal;
-    document.getElementById("total").innerHTML = total;
+    return [tipTotal, total];
 };
 
 //button click
 document.getElementById("calculateBtn").onclick = function() {
   
-    //Test data
-    //var bill = 123.45;
-    //var tip = 15;
+    var results = [0, 0];
 
     //grabs data and parses as integer for future calculations
     var bill = parseFloat (document.getElementById("bill").value);
     var tip = parseFloat (document.getElementById("tipPerc").value);
 
-    calcTip(bill, tip);  
+    //validates data and calls calcTip function
+    var regexCurrency  = /^\d+(?:\.\d{0,2})$/;    
+    var regexWhole  = /^[1-9]\d*$/;    
+
+    if (regexCurrency.test(bill)) {
+        if (regexWhole.test(tip)) {
+            results = calcTip(bill, tip);         
+        } else {
+            alert("Enter a valid tip percentage (hint: whole numbers)!");
+        };        
+    } else {        
+        alert("Enter a valid dollar amount!");
+    };    
+
+    //outputs values to page
+    document.getElementById("tipTotal").innerHTML = results[0];
+    document.getElementById("total").innerHTML = results[1];
 };
