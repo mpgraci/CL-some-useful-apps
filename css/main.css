@@ -1,16 +1,18 @@
 html {
     font-size: 1em;    
+    background-color: E8E8E8;
+    overflow-x: hidden;
 }
 
 .header {
-    background-color: palevioletred;
+    background-color: lightblue;
     text-align: center;    
     padding: 10px;
     width: 100%;
 }
 
 .main { /*contains content elements*/
-    background-color: yellow;
+    background-color: white;
     width: 80%;    
     margin: auto;        
     display: flex;
@@ -18,7 +20,7 @@ html {
 }
 
 .content-box {
-    background-color: turquoise;     
+    background-color: lightgreen;     
     width: 25em;
     min-height: 10em;  
     padding: 5px;  
@@ -31,7 +33,7 @@ html {
 }
 
 .wrap { /*creates sticky footer*/
-    min-height: calc(100vh - 89px);
+    min-height: calc(100vh - 75px);
   }
 .footer {
     background-color: lightblue;
@@ -48,6 +50,7 @@ html {
         align-items: center;
     }
     .content-box {
-        width: 15em;
+        
+        max-width: 80%;
     }
     }
