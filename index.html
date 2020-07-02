@@ -14,18 +14,41 @@
             </header> 
 
             <!--Main content-->
-            <div class="main">
-                <div class="appContainer" id="app">
-                    <label>Bill Amount</label>
-                    <input type="text" id="bill">
+            <div class="main">  
 
-                    <label>Tip%</label>                    
-                    <input type="text" id="tip">                                    
-                    <button id="calculate">Calculate</button>
-                    <label>Total: </label>
-                </div>                   
+                    <!--Instructions-->
+                    <div class="content-box">
+                        <label>Instructions: </label>
+                        </br>
+                        <p>It's a tip calculator, it's not hard. Enter your bill amount in the field labeled "bill amount" and the tip percentage you want to pay in the "tip%" field. Then press the "Calculate" button.</p>
+                    </div>
+
+                    <!--Input-->
+                    <form class="content-box"  id="input-form">
+
+                        <label>Bill Amount</label>
+                        </br>
+                        <input type="text" id="bill">
+                        </br>
+                        <label>Tip%</label>                    
+                        </br>
+                        <input type="text" id="tip">   
+                        </br>
+                        <button id="calculate">Calculate</button>                    
+
+                    </form>
+
+                    <!--Output-->
+                    <div class="content-box" id="output-form">
+
+                        <label>Total: </label>                    
+                        </br>
+                        <label>Comment: </label>                  
+                                                    
+                    </div>                      
+                
             </div>   
-        </div>
+        </div>       
 
         <!--Footer-->
         <footer class="footer">           
