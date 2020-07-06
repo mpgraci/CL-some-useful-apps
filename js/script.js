@@ -22,7 +22,7 @@ document.getElementById("calculateBtn").onclick = function() {
     var tip = parseFloat (document.getElementById("tipPerc").value);
 
     //validates data and calls calcTip function
-    var regexCurrency  = /^\d+(?:\.\d{0,2})$/;    
+    var regexCurrency  = /^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?$/;    
     var regexWhole  = /^[1-9]\d*$/;    
 
     if (regexCurrency.test(bill)) {
