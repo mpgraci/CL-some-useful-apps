@@ -1,32 +1,72 @@
 html {
     font-size: 1em;    
-    background-color: E8E8E8;
+    background-color: #3aafa9;
     overflow-x: hidden;
 }
 
+label {
+    font-size: 20;
+    margin: 5px;
+    white-space: nowrap;
+}
+
 .header {
-    background-color: lightblue;
+    background-color: #2b7a78;
+    color: white;
     text-align: center;    
     padding: 10px;
     width: 100%;
 }
 
 .main { /*contains content elements*/
-    background-color: white;
+    background-color: #feffff;
     width: 80%;    
     margin: auto;        
     display: flex;
     justify-content: space-evenly;
+    border-radius: 15px;
 }
 
 .content-box {
-    background-color: lightgreen;     
+         
+    background-color: #def2f1;
     width: 25em;
     min-height: 10em;  
-    padding: 5px;  
-    margin: 10px;            
+    padding: 15px;  
+    margin: 10px;      
+    display: flex;
+    justify-content: space-between;      
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
         
 }
+
+.input {
+    width: 50%;
+    margin:10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    width: 120px;    
+}
+
+.button {
+    background-color: #17252a; 
+    border: none;
+    color: white;
+    margin: 15px;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 15px;
+  }
+
 .centerwrapper {
     margin: auto;    
     background-color: red;
@@ -36,7 +76,8 @@ html {
     min-height: calc(100vh - 75px);
   }
 .footer {
-    background-color: lightblue;
+    background-color: #2b7a78;
+    color: white;
     width: 100%;
     text-align: center;    
     padding: 10px;
