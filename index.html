@@ -13,7 +13,7 @@
 
             <!--Header-->
             <header class="header">            
-                <h2>Tip Calculator</h2>
+                <h1>Tip Calculator</h1>
             </header> 
 
             <!--Main content-->
@@ -21,19 +21,24 @@
 
                     <!--Instructions-->
                     <div class="content-box">
-                        <label>Instructions: </label>                        
-                        <p>It's a tip calculator, it's not hard. Enter your bill amount in the field labeled "bill amount" and the tip percentage you want to pay in the "tip%" field. Then press the "Calculate" button.</p>
+                        <label>Instructions</label>                        
+                        <ol>
+                            <li>Do you really need instructions?</li>
+                            <li>Enter bill amount where it says "Bill Amount"</li>
+                            <li>Enter tip percentage where it says "Tip Percentage"</li>
+                            <li>Press the button that says "Calculate"</li>
+                        </ol>
                     </div>
 
                     <!--Input-->
                     <form class="content-box"  id="input-form">
 
-                        <div class="input">
+                        <div class="inputGroup">
                             <label>Bill Amount ($)</label>                                                        
                             <input id="bill" placeholder="ex: 102.58">
                         </div>
                         
-                        <div class="input">
+                        <div class="inputGroup">
                             <label>Tip Percentage (%)</label>                                                
                             <input id="tipPerc" placeholder="ex: 20">                              
                         </div>
@@ -44,15 +49,17 @@
 
                     <!--Output-->
                     <div class="content-box" id="output-form">
-                        <label>Tip: </label>
                         
-                        <span id="tipTotal"></span>
-                        
-                        <label>Total: </label> 
-                        
-                        <span id="total"></span>
-                        
-                        <div id="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </div>                  
+                        <div class="outputGroup">
+                            <label>Tip</label>                        
+                            <span class="output" id="tipTotal">$0.00</span>
+                        </div>
+                        <div class="outputGroup">
+                            <label>Total</label>                         
+                            <span class="output" id="total">$0.00</span>
+                        </div>
+                        <div id="comment">How much you tip says a lot about who you are.</div>                  
+                        <button type="button" id="roundBtn" class="button">Round Total</button>      
                                                     
                     </div>                      
                 
