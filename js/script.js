@@ -1,3 +1,8 @@
+var results = [0, 0];
+var comment = "";
+var bill = 0;
+var tip = 0;
+
 //calculate tip
 function calcTip(bill, tip) {
     
@@ -6,12 +11,14 @@ function calcTip(bill, tip) {
     var total = tipTotal + bill;
 
     //forces two decimal places
-    tipTotal = (Math.round(tipTotal * 100) / 100).toFixed(2);  
-    total = (Math.round(total * 100) / 100).toFixed(2);
+    tipTotal = twoDec(tipTotal);  
+    total = twoDec(total);
     
-     if (isWhole(total) != true) {
+    if (isWhole(total) != true) {
         document.getElementById("roundBtn").style.display = "inline";
-     }
+    } else {
+        document.getElementById("roundBtn").style.display = "none";
+    }
 
     return [tipTotal, total];
 };
@@ -21,18 +28,28 @@ function isWhole(number) {
     return number % 1 === 0;
  }
 
-//button click
+ //forces two decimal places
+ function twoDec(n) {
+    n = (Math.round(n * 100) / 100).toFixed(2);
+    return n;
+ };
+
+ //displays results on page
+function displayResults(finalTip, finalTotal, FinalComment) {
+    document.getElementById("tipTotal").innerHTML = "$" + finalTip;
+    document.getElementById("total").innerHTML = "$" + finalTotal;
+    document.getElementById("comment").innerHTML = finalComment;  
+};
+
+//calculate button click
 document.getElementById("calculateBtn").onclick = function() {
   
-    var results = [0, 0];
-    var comment = "";
-
     //grabs data and parses as integer for future calculations
-    var bill = parseFloat (document.getElementById("bill").value);
-    var tip = parseFloat (document.getElementById("tipPerc").value);
+    bill = parseFloat (document.getElementById("bill").value);
+    tip = parseFloat (document.getElementById("tipPerc").value);
 
     //validates data and calls calcTip function
-    var regexCurrency  = /^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?$/;    
+    var regexCurrency  = /^\$?\-?([1-9]{1}[0-9]{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))$|^\-?\$?([1-9]{1}\d{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))$|^\(\$?([1-9]{1}\d{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))\)$/;    
     var regexWhole  = /^[1-9]\d*$/;    
 
     if (regexCurrency.test(bill)) {
@@ -55,9 +72,15 @@ document.getElementById("calculateBtn").onclick = function() {
     else {
         comment = "That's it?! Did they spit in your food?";
     }    
-
-    //outputs values to page
-    document.getElementById("tipTotal").innerHTML = "$" + results[0];
-    document.getElementById("total").innerHTML = "$" + results[1];
-    document.getElementById("comment").innerHTML = comment;
+    
+    displayResults(results[0], results[1], comment);    
 };
+
+//round button click
+document.getElementById("roundBtn").onclick = function() {
+    var newTotal = twoDec(Math.ceil(results[1]));    
+    var newTip = twoDec(newTotal - bill);            
+    comment = "Don't like decimals?";
+
+    displayResults(newTip, newTotal, comment);
+}
