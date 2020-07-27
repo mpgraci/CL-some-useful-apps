@@ -12,16 +12,20 @@ label {
     white-space: nowrap;
 }
 
-input {
-    width: 120px;    
-}
-
 .header {
     background-color: #0fa3b1;
     color: white;
     text-align: center;    
     padding: 10px;
     width: 100%;
+}
+
+.footer {
+    background-color: #0fa3b1;
+    color: white;
+    width: 100%;
+    text-align: center;    
+    padding: 10px;
 }
 
 .main { /*contains content elements*/
@@ -47,6 +51,7 @@ input {
         
 }
 
+/*start Input section*/
 .inputGroup { /*contains bill and tip input*/
     width: 50%;    
     margin: 20px;
@@ -55,6 +60,12 @@ input {
     flex-direction: column;
 }
 
+input {
+    width: 120px;    
+}
+/*----end input-----*/
+
+/*start Output section*/
 .outputGroup { /*contains tip, total, and comment*/
     width: 50%;    
     margin: 20px;
@@ -72,6 +83,7 @@ input {
     font-weight: bold;
     text-align: center;
 }
+/*----end output----*/
 
 .button {
     background-color: #eddea4; 
@@ -87,26 +99,13 @@ input {
     border-radius: 15px;
   }
 
-  #roundBtn {
+  #roundBtn { /*hides Round total button by default*/
       display: none;
   }
-
-.centerwrapper {
-    margin: auto;    
-    background-color: red;
-}
 
 .wrap { /*creates sticky footer*/
     min-height: calc(100vh - 86px);
   }
-
-.footer {
-    background-color: #0fa3b1;
-    color: white;
-    width: 100%;
-    text-align: center;    
-    padding: 10px;
-}
 
 /*Media Queries*/
 @media (max-width: 769px) {

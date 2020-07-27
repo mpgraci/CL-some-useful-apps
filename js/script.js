@@ -35,7 +35,7 @@ function isWhole(number) {
  };
 
  //displays results on page
-function displayResults(finalTip, finalTotal, FinalComment) {
+function displayResults(finalTip, finalTotal, finalComment) {
     document.getElementById("tipTotal").innerHTML = "$" + finalTip;
     document.getElementById("total").innerHTML = "$" + finalTotal;
     document.getElementById("comment").innerHTML = finalComment;  
@@ -80,7 +80,7 @@ document.getElementById("calculateBtn").onclick = function() {
 document.getElementById("roundBtn").onclick = function() {
     var newTotal = twoDec(Math.ceil(results[1]));    
     var newTip = twoDec(newTotal - bill);            
-    comment = "Don't like decimals?";
+    comment = "Don't like decimals? Or are you paying in cash like a neanderthal?";
 
     displayResults(newTip, newTotal, comment);
 }
