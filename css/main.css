@@ -70,20 +70,21 @@ input {
 /*----Output section-----*/
 .outputGroup { /*contains tip, total, and comment*/
     width: 50%;    
-    margin: 20px;
+    margin: 7px;
     display: flex;
-    align-items: center;
-    flex-direction: column;  
+    align-items: center;   
+    justify-content: space-between;
 }
 
 .output {
     font-size: 30px;
-    font-weight: bold;
+    font-weight: bold;        
 }
 
 #comment {    
     font-weight: bold;
     text-align: center;
+    margin-top: 20px;
 }
 /*----end output----*/
 

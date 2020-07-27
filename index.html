@@ -43,8 +43,8 @@
                             <input id="tipPerc" placeholder="ex: 20">                              
                         </div>
                         
-                        <button type="button" id="calculateBtn" class="button">Calculate</button>                    
-                        <button type="button" id="clearBtn" class="button">Clear</button>                    
+                        <button type="button" id="calculateBtn" class="button">Calculate</button>            
+                        <button type="button" id="clearBtn" class="button">Clear</button>                                                    
 
                     </form>
 
@@ -52,15 +52,24 @@
                     <div class="content-box" id="output-form">
                         
                         <div class="outputGroup">
-                            <label>Tip</label>                        
+                            <label>Subtotal: </label>                        
+                            <span class="output" id="subtotal">$0.00</span>
+                        </div>
+                        <div class="outputGroup">
+                            <label>Tip%: </label>                        
+                            <span class="output" id="outputTipPerc">0%</span>
+                        </div>
+                        
+                        <div class="outputGroup">
+                            <label>Tip: </label>                        
                             <span class="output" id="tipTotal">$0.00</span>
                         </div>
                         <div class="outputGroup">
-                            <label>Total</label>                         
+                            <label>Total: </label>                         
                             <span class="output" id="total">$0.00</span>
                         </div>
                         <div id="comment">How much you tip says a lot about who you are.</div>                  
-                        <button type="button" id="roundBtn" class="button">Round Up Total</button>      
+                        <button type="button" id="roundBtn" class="button">Round Up Total</button>                              
                                                     
                     </div>                      
                 

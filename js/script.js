@@ -36,6 +36,9 @@ function isWhole(number) {
 
  //displays results on page
 function displayResults(finalTip, finalTotal, finalComment) {
+    document.getElementById("subtotal").innerHTML = "$" + bill;
+    document.getElementById("outputTipPerc").innerHTML = tip + "%";
+
     document.getElementById("tipTotal").innerHTML = "$" + finalTip;
     document.getElementById("total").innerHTML = "$" + finalTotal;
     document.getElementById("comment").innerHTML = finalComment;  
@@ -79,15 +82,18 @@ document.getElementById("calculateBtn").onclick = function() {
 
 //clear button click
 document.getElementById("clearBtn").onclick = function() {
-    document.getElementById("roundBtn").style.display = "none";
-    document.getElementById("clearBtn").style.display = "none";
-
+    document.getElementById("subtotal").innerHTML = "$0.00";
+    document.getElementById("outputTipPerc").innerHTML = "0%";
+    
     document.getElementById("bill").value = '';
     document.getElementById("tipPerc").value = '';
 
     document.getElementById("tipTotal").innerHTML = "$0.00";
     document.getElementById("total").innerHTML = "$0.00";
     document.getElementById("comment").innerHTML = "Did you type something wrong? Guess you really do need this calculator.";
+
+    document.getElementById("roundBtn").style.display = "none";
+    document.getElementById("clearBtn").style.display = "none";
 };
 
 //round button click
