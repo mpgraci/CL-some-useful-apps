@@ -3,7 +3,7 @@ var comment = "";
 var bill = 0;
 var tip = 0;
 
-//calculate tip
+//calculates tip
 function calcTip(bill, tip) {
     
     //calculates tip and total
@@ -73,7 +73,21 @@ document.getElementById("calculateBtn").onclick = function() {
         comment = "That's it?! Did they spit in your food?";
     }    
     
-    displayResults(results[0], results[1], comment);    
+    displayResults(results[0], results[1], comment);   
+    document.getElementById("clearBtn").style.display = "inline"; 
+};
+
+//clear button click
+document.getElementById("clearBtn").onclick = function() {
+    document.getElementById("roundBtn").style.display = "none";
+    document.getElementById("clearBtn").style.display = "none";
+
+    document.getElementById("bill").value = '';
+    document.getElementById("tipPerc").value = '';
+
+    document.getElementById("tipTotal").innerHTML = "$0.00";
+    document.getElementById("total").innerHTML = "$0.00";
+    document.getElementById("comment").innerHTML = "Did you type something wrong? Guess you really do need this calculator.";
 };
 
 //round button click
@@ -83,4 +97,4 @@ document.getElementById("roundBtn").onclick = function() {
     comment = "Don't like decimals? Or are you paying in cash like a neanderthal?";
 
     displayResults(newTip, newTotal, comment);
-}
+};

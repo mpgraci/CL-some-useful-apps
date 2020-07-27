@@ -1,3 +1,4 @@
+/*Global Styles*/
 html {
     font-size: 1.2em;    
     font-family: Arial;
@@ -12,6 +13,11 @@ label {
     white-space: nowrap;
 }
 
+input {
+    width: 120px;    
+}
+
+/*framing*/
 .header {
     background-color: #0fa3b1;
     color: white;
@@ -51,7 +57,7 @@ label {
         
 }
 
-/*start Input section*/
+/*----Input section-----*/
 .inputGroup { /*contains bill and tip input*/
     width: 50%;    
     margin: 20px;
@@ -59,13 +65,9 @@ label {
     align-items: center;
     flex-direction: column;
 }
-
-input {
-    width: 120px;    
-}
 /*----end input-----*/
 
-/*start Output section*/
+/*----Output section-----*/
 .outputGroup { /*contains tip, total, and comment*/
     width: 50%;    
     margin: 20px;
@@ -99,7 +101,7 @@ input {
     border-radius: 15px;
   }
 
-  #roundBtn { /*hides Round total button by default*/
+  #roundBtn, #clearBtn { /*hides buttons by default*/
       display: none;
   }
 
