@@ -37,7 +37,7 @@ function isWhole(number) {
  //displays results on page
 function displayResults(finalTip, finalTotal, finalComment) {
     document.getElementById("subtotal").innerHTML = "$" + bill;
-    document.getElementById("outputTipPerc").innerHTML = tip + "%";
+    document.getElementById("outputTipPerc").innerHTML = tip + "%";     
 
     document.getElementById("tipTotal").innerHTML = "$" + finalTip;
     document.getElementById("total").innerHTML = "$" + finalTotal;
@@ -87,9 +87,10 @@ document.getElementById("clearBtn").onclick = function() {
     
     document.getElementById("bill").value = '';
     document.getElementById("tipPerc").value = '';
-
+    
     document.getElementById("tipTotal").innerHTML = "$0.00";
     document.getElementById("total").innerHTML = "$0.00";
+
     document.getElementById("comment").innerHTML = "Did you type something wrong? Guess you really do need this calculator.";
 
     document.getElementById("roundBtn").style.display = "none";
@@ -97,10 +98,11 @@ document.getElementById("clearBtn").onclick = function() {
 };
 
 //round button click
-document.getElementById("roundBtn").onclick = function() {
+document.getElementById("roundBtn").onclick = function() {    
     var newTotal = twoDec(Math.ceil(results[1]));    
     var newTip = twoDec(newTotal - bill);            
     comment = "Don't like decimals? Or are you paying in cash like a neanderthal?";
 
+    document.getElementById("roundBtn").style.display = "none";
     displayResults(newTip, newTotal, comment);
 };
