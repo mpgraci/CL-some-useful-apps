@@ -9,3 +9,4 @@ Features include:
 -Form that takes in two fields of info and validates (checks they are numbers)
 -Javascript that performs math function and returns to page after button click
 -Javascript function that performs math operations and displays result
+-Use of javascript array to return values
